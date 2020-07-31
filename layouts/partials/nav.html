@@ -98,10 +98,16 @@
             {{ end }}
             {{ end }}
 
-            {{ range $.Site.Home.AllTranslations.ByWeight }}
-            {{ if ne .Language.LanguageName $.Language.LanguageName }}
-            <a class="navbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-            {{ end }}
+            {{ if .IsTranslated }}
+              {{ range .Translations }}
+              <a class="navbar-item" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+              {{ end }}
+            {{ else }}
+              {{ range $.Site.Home.AllTranslations.ByWeight }}
+              {{ if ne .Language.LanguageName $.Language.LanguageName }}
+              <a class="navbar-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+              {{ end }}
+              {{ end }}
             {{ end }}
 
             {{ if and .Site.Params.showRSSButton .Site.RSSLink }}
