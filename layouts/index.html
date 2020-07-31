@@ -105,15 +105,15 @@
                 <div class="markdown">
                     {{ .Content }}
                 </div>
-                {{ if .Site.Params.home.localTime }}
-                <p>{{ i18n "index_currentTime" . }} <span id="time" data-time-zone="{{ .Site.Params.home.timeZone }}" data-time-format="{{ .Site.Params.home.timeFormat }}"></span>.</p>
-                {{ end }}
-                {{ with .Site.Params.email }}
-                <h3 class="subtitle is-3 has-text-centered top-pad">
-                    <a href="mailto:{{ . }}">{{ . }}</a>
-                </h3>
-                {{ end }}
-                {{ partial "home/social.html" . }}
+                <!-- {{ if .Site.Params.home.localTime }} -->
+                <!-- <p>{{ i18n "index_currentTime" . }} <span id="time" data-time-zone="{{ .Site.Params.home.timeZone }}" data-time-format="{{ .Site.Params.home.timeFormat }}"></span>.</p> -->
+                <!-- {{ end }} -->
+                <!-- {{ with .Site.Params.email }} -->
+                <!-- <h3 class="subtitle is-3 has-text-centered top-pad"> -->
+                <!--     <a href="mailto:{{ . }}">{{ . }}</a> -->
+                <!-- </h3> -->
+                <!-- {{ end }} -->
+                <!-- {{ partial "home/social.html" . }} -->
             </div>
             <!-- End Contact container -->
             {{ partial "top-icon.html" . }}

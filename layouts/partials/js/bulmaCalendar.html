@@ -1,0 +1,4 @@
+{{ $bulmaCalendar := resources.Get "vendor/bulmaCalendar/bulma-calendar.min.js" }}
+{{ $initBulmaCalendar := resources.Get "js/bulma-calendar.js" | minify }}
+{{ $bundleBulmaCalendar := slice $bulmaCalendar $initBulmaCalendar | resources.Concat "js/bundleBulmaCalendar.js" | fingerprint }}
+<script src="{{ $bundleBulmaCalendar.Permalink }}" integrity="{{ $bundleBulmaCalendar.Data.Integrity }}"></script>
